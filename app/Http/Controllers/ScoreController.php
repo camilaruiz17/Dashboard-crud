@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Score;
+use App\Models\User;
+use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\DB;
 
 class ScoreController extends Controller
 {
@@ -29,7 +32,22 @@ class ScoreController extends Controller
      */
 public function index()
 {
-    $scores = Score::paginate(5);
+    $currentUserRol = \Illuminate\Support\Facades\Auth::user()->roles[0]->name;
+    $currentUserId = \Illuminate\Support\Facades\Auth::user()->id;
+
+    $scores = DB::table('scores')
+            ->join('users', 'scores.users_id', '=', 'users.id')
+            ->select('scores.*', 'users.name')
+            ->paginate(5);
+
+    if($currentUserRol == 'Students') {
+        $scores = DB::table('scores')
+            ->join('users', 'scores.users_id', '=', 'users.id')
+            ->select('scores.*', 'users.name')
+            ->where('scores.users_id', '=', $currentUserId)
+            ->paginate(5);
+    }
+
     return view('scores.index', compact('scores'));
 }
 
@@ -40,8 +58,15 @@ public function index()
  */
 public function create()
 {
-    
-    return view('scores.crear');
+    $usersAll = User::all();
+    $users = [];
+    foreach ($usersAll as $user) {
+        $permission = array_keys($user->roles->pluck('name', 'name')->all(), 'Students');
+        if (count($permission) > 0) {
+            array_push($users, $user);
+        }
+   }
+    return view('scores.crear', compact('users'));
 }
 
 /**
@@ -53,11 +78,11 @@ public function create()
 public function store(Request $request)
 {
     request()-> validate ([
-        'id_students'=> 'required',
-        'academicyear'=> 'required',
+        'users_id'=> 'required',
+        'academicYear'=> 'required',
         'course'=> 'required',
         'subject' => 'required',
-        'trimester'=> 'required'
+        'quarter'=> 'required'
     ]);
     Score::create($request->all());
     return redirect()->route('scores.index');
@@ -88,11 +113,11 @@ public function edit(Score $score)
 public function update(Request $request, Score $score)
 {
     request()->validate([
-        'ID'=> 'required',
-        'academicyear'=> 'required',
+        'id'=> 'required',
+        'academicYear'=> 'required',
         'course'=> 'required',
         'subject' => 'required',
-        'trimester'=> 'required'
+        'quarter'=> 'required'
 ]);
 $score->update($request->all());
 return redirect()->route('scores.index');

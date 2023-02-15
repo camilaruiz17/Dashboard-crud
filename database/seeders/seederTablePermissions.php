@@ -1,6 +1,4 @@
-
 <?php
-
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
@@ -28,6 +26,11 @@ class seederTablePermissions extends Seeder
                     'crear-score',
                     'edit-score',
                     'delete-score',
+                    //tabla user
+                    'see-users',
+                    'crear-users',
+                    'edit-users',
+                    'delete-users',
                     ];
             
                     foreach($permissions as $permission) {

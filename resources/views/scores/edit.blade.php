@@ -26,10 +26,11 @@
                                 @csrf
                                 @method('PUT')
                             <div class="row">
+                                <input type="hidden" name="id" class="form-control" value="{{ $score->id }}">
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
-                                        <label for="academicyear">Academic Year</label>
-                                        <input type="text" name="academicyear" class="form-control" value="{{ $score->academicyear }}">
+                                        <label for="academicYear">Academic Year</label>
+                                        <input type="text" name="academicYear" class="form-control" value="{{ $score->academicYear }}">
                                     </div>
                                 </div>
                             </div>
@@ -52,8 +53,8 @@
 
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
-                                <label for="trimester">Trimester</label>
-                                <input type="text" name="trimester" class="form-control" value="{{ $score->trimester }}">
+                                <label for="quarter">Trimester</label>
+                                <input type="text" name="quarter" class="form-control" value="{{ $score->quarter }}">
                             </div>
                         </div>
                     </div>

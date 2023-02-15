@@ -27,16 +27,22 @@
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                         <div class="form-group">
-                                            <label for="id">Id</label>
-                                            <input type="text" name="id" class="form-control">
+                                            <label for="id">Student</label>
+                                            <select name="users_id">
+                                                @foreach ($users as $user)
+                                                    <option value="{{ $user->id}}">
+                                                        {{$user->name}}
+                                                    </option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
-                                        <label for="academicyear">Academic Year</label>
-                                        <input type="int" name="academicyear" class="form-control">
+                                        <label for="academicYear">Academic Year</label>
+                                        <input type="int" name="academicYear" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -59,8 +65,8 @@
 
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
-                                <label for="trimester">Trimester</label>
-                                <input type="int" name="trimester" class="form-control">
+                                <label for="quarter">Trimester</label>
+                                <input type="int" name="quarter" class="form-control">
                             </div>
                         </div>
                     </div>

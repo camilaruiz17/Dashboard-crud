@@ -15,19 +15,16 @@ return new class extends Migration
     {
         Schema::create('scores', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_students');
-            // $table->foreign('id_students')->references('id')->on('students')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('academicYear')->default('2023');
+            $table->unsignedBigInteger('users_id');
+            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('academicYear');
             $table->integer('course');
             $table->string('subject');
             $table->integer('quarter');
             $table->integer('mark1');
             $table->integer('mark2');
             $table->integer('mark3');
-
-            //$table->timestamp();
-            
-
+            $table->timestamps();
         });
     }
 

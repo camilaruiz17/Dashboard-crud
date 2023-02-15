@@ -11,13 +11,13 @@
                     <div class="card">
                         <div class="card-body">
                             
-                            @can('create-score')
+                            @can('crear-score')
                             <a class="btn btn-warning" href="{{route('scores.create')}}">New</a>
                             @endcan
 
                             <table class="table table-striped mt-2">
                                 <thead style="background-color: #6777ef;">
-                                    <th style="color:#fff;">Id</th>
+                                    <th style="color:#fff;">Name</th>
                                     <th style="color:#fff;">Academic Year</th>
                                     <th style="color:#fff;">Course</th>
                                     <th style="color:#fff;">Subject</th>
@@ -25,15 +25,16 @@
                                     <th style="color:#fff;">Mark 1</th>
                                     <th style="color:#fff;">Mark 2</th>
                                     <th style="color:#fff;">Mark 3</th>
+                                    <th style="color:#fff;">Actions</th>
                                 </thead>
                                 <tbody>
                                     @foreach ($scores as $score)
                                     <tr>
-                                        <td >{{$score->id}}</td>
-                                        <td>{{$score->academicyear}}</td>
+                                        <td >{{$score->name}}</td>
+                                        <td>{{$score->academicYear}}</td>
                                         <td>{{$score->course}}</td>
                                         <td>{{$score->subject}}</td>
-                                        <td>{{$score->trimester}}</td>
+                                        <td>{{$score->quarter}}</td>
                                         <td>{{$score->mark1}}</td>
                                         <td>{{$score->mark2}}</td>
                                         <td>{{$score->mark3}}</td>
