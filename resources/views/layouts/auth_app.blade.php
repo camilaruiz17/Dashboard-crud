@@ -6,26 +6,25 @@
     <title>@yield('title') | {{ config('app.name') }}</title>
 
     <!-- General CSS Files -->
-    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('web/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('web/css/components.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/css/iziToast.min.css') }}">
-    <link href="{{ asset('assets/css/sweetalert.css') }}" rel="stylesheet" type="text/css"/>
-    <link href="{{ asset('assets/css/select2.min.css') }}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="{{ asset('web/css/iziToast.min.css') }}">
+    <link href="{{ asset('web/css/sweetalert.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('web/css/select2.min.css') }}" rel="stylesheet" type="text/css"/>
 </head>
 
-<body>
+<body class="welcomephoto">
 <div id="app">
     <section class="section">
         <div class="container mt-5">
             <div class="row">
                 <div class="col-md-6 offset-md-3">
                     <div class="login-brand">
-                        <img src="{{ asset('img/logo.png') }}" alt="logo" width="100"
-                             class="shadow-light">
+                        <img src="{{ asset('img/logo.png') }}" alt="logo" width="350">
                     </div>
                     @yield('content')
                     <div class="simple-footer">
@@ -38,10 +37,10 @@
 </div>
 
 <!-- General JS Scripts -->
-<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-<script src="{{ asset('assets/js/popper.min.js') }}"></script>
-<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('assets/js/jquery.nicescroll.js') }}"></script>
+<script src="{{ asset('js/jquery-1.12.0.min.js') }}"></script>
+<script src="{{ asset('web/js/popper.min.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
 
 <!-- JS Libraies -->
 

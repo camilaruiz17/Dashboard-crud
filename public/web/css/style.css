@@ -4134,3 +4134,16 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
         font-size: 9px;
     }
 }
+
+.opacity{
+    background-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.welcomephoto{
+    background-image: url('../../imgwelcome/school.jpg');
+    background-size: cover;
+}
+
+.lineadelrol{
+    
+}
