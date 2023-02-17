@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="{{ asset('web/css/iziToast.min.css') }}">
     <link href="{{ asset('web/css/sweetalert.css') }}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('web/css/select2.min.css') }}" rel="stylesheet" type="text/css"/>
+
+{{-- Scripts --}}
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
     
 
 @yield('page_css')
