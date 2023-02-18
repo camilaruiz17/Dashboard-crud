@@ -28,13 +28,13 @@
 <body>
 
 <div id="app">
-    <div class="main-wrapper main-wrapper-1">
+    <div class="main-wrapper main-wrapper-1" style="background-color: #f8a2ac;">
         <div class="navbar-bg"></div>
         <nav class="navbar navbar-expand-lg main-navbar">
             @include('layouts.header')
 
         </nav>
-        <div class="main-sidebar main-sidebar-postion">
+        <div class="main-sidebar main-sidebar-postion" style="background-color: #B5A2E1;">
             @include('layouts.sidebar')
         </div>
         <!-- Main Content -->

@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="section">
-        <div class="section-header">
+        <div class="section-header" style="background-color: #71D0F5;">
             <h3 class="page__heading">Dashboard</h3>
         </div>
         <div class="section-body">

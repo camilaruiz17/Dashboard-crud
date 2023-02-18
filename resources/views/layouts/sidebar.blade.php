@@ -1,7 +1,6 @@
 <aside id="sidebar-wrapper">
-    <div class="sidebar-brand">
-        <img class="navbar-brand-full app-header-logo" src="{{ asset('img/logo.png') }}" width="143"
-             alt="Infyom Logo">
+    <div class="sidebar-brand" style="background-color: #B5A2E1;">
+        <img class="img-rounded" src="{{ asset('img/skinner.jpg') }}" width="143">
         <a href="{{ url('/') }}"></a>
     </div>
     <div class="sidebar-brand sidebar-brand-sm">

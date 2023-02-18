@@ -4144,6 +4144,21 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
     background-size: cover;
 }
 
-.lineadelrol{
-    
+.table-Responsive{
+    overflow-x: scroll;
+
+}
+
+.dashboard{
+    margin-top: 100px;
+}
+
+.img-rounded {
+    border-radius: 50%;
+    max-width: 150px;
+    margin: 0 auto;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.49);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.49);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.49);
+    margin-top: 30px;
 }

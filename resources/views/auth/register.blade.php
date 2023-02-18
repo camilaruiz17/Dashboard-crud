@@ -15,10 +15,10 @@
                             <label for="first_name">Full Name:</label><span
                                     class="text-danger">*</span>
                             <input id="firstName" type="text"
-                                   class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                                   name="name"
-                                   tabindex="1" placeholder="Enter Full Name" value="{{ old('name') }}"
-                                   autofocus required>
+                                class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
+                                name="name"
+                                tabindex="1" placeholder="Enter Full Name" value="{{ old('name') }}"
+                                autofocus required>
                             <div class="invalid-feedback">
                                 {{ $errors->first('name') }}
                             </div>
